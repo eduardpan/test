@@ -25,6 +25,13 @@ Please answer the following question textually.
 
 The file web/showhospitalpatients.php is intended to retrieve a list of patients for a given hospital and return that in json format. Are there any comments you would like to make? What could be improved about the code ?
 
+### Answer
+- all kind of HTTP methods can be used (hospitalId can as well be provided in an HTTP POST request), but should be limited to a GET request actually(since no changes are being made)
+- file is not being bootstrapped(don't see how the connection to the db is made actually), autoloading and request can be moved in a single file
+- no client-server negotiation for pagination (all patients of a hospital are being returned which can be perhaps very many and memory limit be exceeded)
+- single query can be made to fetch all data needed
+- use of global variable $request
+
 #### Exercise
 
 This is the coding portion of the test. Please write code as well as you can using existing entities/repositories where appropriate and adding classes/files where needed.

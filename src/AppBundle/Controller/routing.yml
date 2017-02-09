@@ -1,0 +1,4 @@
+create_patient:
+    path:     /patient
+    defaults: { _controller: AppBundle:Patient:create }
+    methods: [POST]

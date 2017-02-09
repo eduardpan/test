@@ -19,6 +19,8 @@ class Patient
 	private $gender;
 	/** @var  Hospital */
 	private $hospital;
+        /** @var  Doctor */
+	private $doctor;
 
 	/**
 	 * @return int
@@ -110,5 +112,21 @@ class Patient
 		return $this;
 	}
 
+        /**
+	 * @return Doctor
+	 */
+	public function getDoctor()
+	{
+		return $this->doctor;
+	}
 
+	/**
+	 * @param Doctor $doctor
+	 * @return Patient
+	 */
+	public function setDoctor($doctor)
+	{
+		$this->doctor = $doctor;
+		return $this;
+	}
 }
